@@ -13,6 +13,8 @@
         <!-- <link rel="stylesheet" href="./css/impress-common.css"> -->
         <!-- кажется всё хорошо работает и без этого слайда, т.к. стиль автоматически настраивается кодом на JavaScript ниже  -->
 
+        <!-- [Attributes by Finsweet] Code Highlight -->
+
     </head>
 
     <!-- тело страницы -->
@@ -26,11 +28,12 @@
         <!-- div — простой тег в html, обозначающий блок содержимого. 
             Сам тег не несёт особого смысла как, например title, а используется как контейнер.
             Ещё к этому простому блоку удобно применять стили, можно давать свои идентификаторы (например id="impress" )-->
-        <div id="impress">
+        <div id="impress" >
 
             <!-- первый слайд -->
             <!-- div с классом (стилем) step — тег, который должен содержать описание одного слайда -->
-            <div id="myFirstSlide" class="step">
+            <div id="myFirstSlide" style="width:600px;" class="step" >
+                <!-- upd: ширину конкретного слайда можно поменять задавая стиль вручную: style="width:600px;" -->
                 <!-- h1 — тег обозначающий заголовок первого уровня. Еще есть h2..h6 -->
                 <h1>My first Slide</h1>
 
@@ -45,15 +48,35 @@
             </div>
 
             <!-- второй слайд -->
-            <div class="step" data-x=1000 data-scale="1.5">
+            <div class="step" style="width:600px;" data-x=1500 data-scale="1.5">
                 <!-- ul — тег обозначающий список, li — элемент списка -->
                 <ul>
-                    <li>Impress JS. Reveal js. ещё?</li>
-                    <li>Таблица сравнения: подсветка кода, формулы, древовидная структура; текстовый формат (гит); таблицы; видео; доступ по ссылке; комментарии к слайдам; печать в pdf ; быстрая смена темы</li>
+                    <li >Impress JS. Reveal js. ещё?</li>
+                    <li >Таблица сравнения: подсветка кода, формулы, древовидная структура; текстовый формат (гит); таблицы; видео; доступ по ссылке; комментарии к слайдам; печать в pdf ; быстрая смена темы</li>
                     <li>Загрузить код на github pages</li>
                 </ul>
 
+            </div>
 
+
+            <div class="step" style="width:600px;" data-x=3000 data-scale="1.5">
+                <!-- p — тег для параграфа -->
+                <p>Пример кода</p>
+
+                Для подсветки синтаксиса можно дополнительно подключить какой-нибудь специальный JS файл,
+                который будет менять стиль кода в блоках типа pre
+
+                <!-- тег pre задают блок для отображения предварительно отформатированного текста -->
+                <pre>
+                    if TryStrToFloat(Edit_tau.Text, tau) = false then
+                      begin
+                        Edit_tau.Color:= TColor( error_color );
+                        Memo_report.Lines.Add('Параметр tau введён неправильно');
+                        result:= false;;
+                      end
+                    else
+                      Edit_a.Color:= clWhite;
+                </pre>
 
             </div>
 
@@ -65,8 +88,9 @@
         https://github.com/impress/impress.js/ -->
         <script src="js/impress.js"></script>
 
+
         <!-- альтернативный способ подключения файла — по сетевому адресу -->
-        <script src="https://cdn.jsdelivr.net/gh/impress/impress.js@2.0.0/js/impress.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/gh/impress/impress.js@2.0.0/js/impress.js"></script> -->
 
 
         <!-- код из этого файла при загрузке автоматически настроит стили, добавит обработчики событий для перехода на следующий слайд 
