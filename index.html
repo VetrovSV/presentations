@@ -15,6 +15,16 @@
 
         <!-- [Attributes by Finsweet] Code Highlight -->
 
+
+        
+        <!-- https://highlightjs.org/usage/ -->
+        <!-- подключение файла с настройками стиля и кода на JS для подсветки синтаксиса -->
+        <link rel="stylesheet" href="css/default.min.css">
+        <script src="js/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+
+
     </head>
 
     <!-- тело страницы -->
@@ -33,6 +43,9 @@
             <!-- первый слайд -->
             <!-- div с классом (стилем) step — тег, который должен содержать описание одного слайда -->
             <div id="myFirstSlide" style="width:600px;" class="step" >
+
+                <!-- <pre><code class="language-Delphi"> def foo(): return 2 + 2 </code></pre> -->
+
                 <!-- upd: ширину конкретного слайда можно поменять задавая стиль вручную: style="width:600px;" -->
                 <!-- h1 — тег обозначающий заголовок первого уровня. Еще есть h2..h6 -->
                 <h1>My first Slide</h1>
@@ -66,17 +79,20 @@
                 Для подсветки синтаксиса можно дополнительно подключить какой-нибудь специальный JS файл,
                 который будет менять стиль кода в блоках типа pre
 
-                <!-- тег pre задают блок для отображения предварительно отформатированного текста -->
-                <pre>
-                    if TryStrToFloat(Edit_tau.Text, tau) = false then
-                      begin
-                        Edit_tau.Color:= TColor( error_color );
-                        Memo_report.Lines.Add('Параметр tau введён неправильно');
-                        result:= false;;
-                      end
-                    else
-                      Edit_a.Color:= clWhite;
-                </pre>
+<!-- пример подсветки синтаксиса cпомошью highlight.js -->
+<!-- тег pre задают блок для отображения предварительно отформатированного текста -->
+<pre>
+<code class="language-Delphi">
+if TryStrToFloat(Edit_tau.Text, tau) = false then
+begin
+    Edit_tau.Color:= TColor( error_color );
+    Memo_report.Lines.Add('Параметр tau введён неправильно');
+    result:= false;;
+    end
+else
+    Edit_a.Color:= clWhite;
+<code>                      
+</pre>
 
             </div>
 
@@ -100,6 +116,6 @@
         <script>window.impress || document.write('<script src="https://cdn.jsdelivr.net/gh/impress/impress.js@2.0.0/js/impress.js">\x3C/script>');</script>
         <script>impress().init()</script>
         
-
+        <script>hljs.highlightAll();</script>
     </body>
 </html>
